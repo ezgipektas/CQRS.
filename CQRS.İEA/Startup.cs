@@ -1,4 +1,5 @@
 using CQRS.İEA.CQRS.Handlers.ProductHandlers;
+using CQRS.İEA.CQRS.Handlers.StudentHandlers;
 using CQRS.İEA.DAL.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,8 +26,12 @@ namespace CQRS.İEA
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<StudentQueryHandlers>();
+            services.AddScoped<RemoveStudentCommandHandler>();
+            services.AddScoped<CreateStudentCommandHandler>();
             services.AddDbContext<ProductContext>();
             services.AddScoped<GetProductQueryHandler>();
+            services.AddScoped<GetStudentByIDQueryHandler>();
             services.AddScoped<GetProductQueryHandler2>();
 
             services.AddControllersWithViews();

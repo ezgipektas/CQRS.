@@ -10,5 +10,6 @@ namespace CQRS.İEA.DAL.Context
             optionsBuilder.UseSqlServer("server=LAPTOP-FJT4L6QM;initial catalog=DbCQRS;integrated security=true");
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Student> Students { get; set; }
     }
 }
