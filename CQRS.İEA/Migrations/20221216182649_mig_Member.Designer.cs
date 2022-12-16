@@ -4,14 +4,16 @@ using CQRS.İEA.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CQRS.İEA.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    partial class ProductContextModelSnapshot : ModelSnapshot
+    [Migration("20221216182649_mig_Member")]
+    partial class mig_Member
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

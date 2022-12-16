@@ -6,7 +6,7 @@ namespace CQRS.İEA.Controllers
     public class ProductController : Controller
     {
         private readonly GetProductQueryHandler _getProductQueryHandler;
-        private readonly GetProductQueryHandler2 _getProductQueryHandler2;
+        
 
         public ProductController(GetProductQueryHandler getProductQueryHandler)
         {

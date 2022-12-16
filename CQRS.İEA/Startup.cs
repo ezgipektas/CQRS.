@@ -1,6 +1,7 @@
 using CQRS.İEA.CQRS.Handlers.ProductHandlers;
 using CQRS.İEA.CQRS.Handlers.StudentHandlers;
 using CQRS.İEA.DAL.Context;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,12 +28,16 @@ namespace CQRS.İEA
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<StudentQueryHandlers>();
+            services.AddScoped<UpdateStudentCommandHandler>();
             services.AddScoped<RemoveStudentCommandHandler>();
             services.AddScoped<CreateStudentCommandHandler>();
             services.AddDbContext<ProductContext>();
             services.AddScoped<GetProductQueryHandler>();
             services.AddScoped<GetStudentByIDQueryHandler>();
             services.AddScoped<GetProductQueryHandler2>();
+
+
+            services.AddMediatR(typeof(Startup));
 
             services.AddControllersWithViews();
         }
